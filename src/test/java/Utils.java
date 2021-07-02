@@ -7,6 +7,10 @@ import java.util.concurrent.TimeUnit;
 public class Utils {
     final static String CHROME_DRIVER_LOCATION = "chromedriver.exe";
     final static String BASE_URL = "C:/Users/cosmi/Desktop/curs/aplicatia2%20web/Testing-Env/index.html";
+    final static String BASE_URL_PersonalInfo="C:/Users/cosmi/Desktop/curs/Testing-Env-master/Testing-Env-master/routes/enrollment.html";
+    final static String BASE_URL2_ContactInfo="C:/Users/cosmi/Desktop/curs/Testing-Env-master/Testing-Env-master/routes/enrollment.html";
+    final static String BASE_URL3_CourseOptions="C:/Users/cosmi/Desktop/curs/Testing-Env-master/Testing-Env-master/routes/enrollment.html";
+    final static String BASE_URL4_PaymentInfo="C:/Users/cosmi/Desktop/curs/Testing-Env-master/Testing-Env-master/routes/enrollment.html";
 
     public static void waitForElementToLoad(int timeUnit) {
         try {
@@ -16,7 +20,7 @@ public class Utils {
         }
     }
 
-    public static void waitForElement(WebDriver driver, WebElement element) {
+    public static void scrollToElement(WebDriver driver, WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
         waitForElementToLoad(3);
     }

@@ -1,6 +1,5 @@
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -14,12 +13,47 @@ public class TestPlan {
         System.setProperty("webdriver.chrome.driver", Utils.CHROME_DRIVER_LOCATION);
     }
 
-    @Test(testName ="Enrolment")
-    public static void populateEnrolment  () {
+    @Test(testName = "Enrolment")
+    public static void populateEnrolment() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(10);
         webForm.populateEnrolment();
+        Utils.waitForElementToLoad(10);
+    }
+
+
+    @Test(testName = "Navigate to ContactInfo")
+    public static void navigateToContactInfoPage() {
+
+        PersonalInformation webForm = new PersonalInformation(driver);
+        webForm.navigateToContactInfoPage();
+        Utils.waitForElementToLoad(10);
+
+
+        ContactInfo webFormTwo = new ContactInfo(driver);
+        webFormTwo.navigateToCourseOptions();
+        Utils.waitForElementToLoad(10);
+
+
+
+        CourseOptions webFormThree = new CourseOptions(driver);
+        webFormThree.navigateToPaymentInfo();
+        Utils.waitForElementToLoad(10);
+
+
+
+        PaymentInfo webFormFour = new PaymentInfo(driver);
+        webFormFour.FinalPaymentInfo();
+        Utils.waitForElementToLoad(10);
+
+}
+
+   @Test(testName ="Return on HomePage")
+    public static void populateHomePage  () {
+        driver.get(Utils.BASE_URL4_PaymentInfo);
+        PaymentInfo webForm = new PaymentInfo(driver);
+        Utils.waitForElementToLoad(10);
+        webForm.populateHomePage();
     }
 
     @Test(testName ="Readmoreblack1")
@@ -29,7 +63,6 @@ public class TestPlan {
         webForm.populateReadmoreblack1();
     }
 
-
     @Test(testName ="Readmoregray")
     public static void populateReadmoregray() {
         driver.get(Utils.BASE_URL);
@@ -37,7 +70,6 @@ public class TestPlan {
         Utils.waitForElementToLoad(10);
         webForm.populateReadmoregray();
     }
-
 
     @Test(testName ="Readmoreblack2")
     public static void populateReadmoreblack2() {
@@ -60,6 +92,7 @@ public class TestPlan {
         MainPage webForm = new MainPage(driver);
         Utils.waitForElementToLoad(10);
         webForm.populateSiteSearch1();
+        Utils.waitForElementToLoad(10);
     }
 
     @Test(testName ="Fundamentals")
@@ -102,11 +135,7 @@ public class TestPlan {
         webForm.populatequestion4();
     }
 
-
-/*public static void scrollToElement(WebDriver driver, WebElement element){((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",element);
-    Utils.waitForElementToLoad(3);}*/
-
-    @AfterSuite
+ @AfterSuite
     public static void cleanUp() {
         driver.manage().deleteAllCookies();
         driver.close();
