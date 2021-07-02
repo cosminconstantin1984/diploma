@@ -21,40 +21,31 @@ public class TestPlan {
         Utils.waitForElementToLoad(10);
     }
 
-
     @Test(testName = "Navigate to ContactInfo")
     public static void navigateToContactInfoPage() {
-
+        driver.get(Utils.BASE_URL2_ContactInfo);
         PersonalInformation webForm = new PersonalInformation(driver);
         webForm.navigateToContactInfoPage();
-        Utils.waitForElementToLoad(10);
+        Utils.waitForElementToLoad(2);
 
 
         ContactInfo webFormTwo = new ContactInfo(driver);
         webFormTwo.navigateToCourseOptions();
-        Utils.waitForElementToLoad(10);
+        Utils.waitForElementToLoad(2);
 
 
 
         CourseOptions webFormThree = new CourseOptions(driver);
         webFormThree.navigateToPaymentInfo();
-        Utils.waitForElementToLoad(10);
+        Utils.waitForElementToLoad(2);
 
 
 
         PaymentInfo webFormFour = new PaymentInfo(driver);
         webFormFour.FinalPaymentInfo();
-        Utils.waitForElementToLoad(10);
+        Utils.waitForElementToLoad(2);
 
 }
-
-   @Test(testName ="Return on HomePage")
-    public static void populateHomePage  () {
-        driver.get(Utils.BASE_URL4_PaymentInfo);
-        PaymentInfo webForm = new PaymentInfo(driver);
-        Utils.waitForElementToLoad(10);
-        webForm.populateHomePage();
-    }
 
     @Test(testName ="Readmoreblack1")
     public static void populateReadmoreblack1 () {
@@ -67,7 +58,7 @@ public class TestPlan {
     public static void populateReadmoregray() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(10);
+        Utils.waitForElementToLoad(2);
         webForm.populateReadmoregray();
     }
 
@@ -75,7 +66,7 @@ public class TestPlan {
     public static void populateReadmoreblack2() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(10);
+        Utils.waitForElementToLoad(2);
         webForm.populateReadmoreblack2();
     }
 
@@ -90,16 +81,15 @@ public class TestPlan {
     public static void populateSiteSearch1() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(10);
+        Utils.waitForElementToLoad(2);
         webForm.populateSiteSearch1();
-        Utils.waitForElementToLoad(10);
+        Utils.waitForElementToLoad(3);
     }
 
     @Test(testName ="Fundamentals")
     public static void populateReadmorefundamental () {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(10);
         webForm.populateReadmorefundamental();
     }
 
@@ -107,8 +97,9 @@ public class TestPlan {
     public static void populatequestion1() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(10);
         webForm.populatequestion1();
+        Utils.waitForElementToLoad(5);
+
     }
 
     @Test(testName ="Question2")
@@ -118,12 +109,10 @@ public class TestPlan {
         webForm.populatequestion2();
     }
 
-
     @Test(testName ="Question3")
     public static void populatequestion3() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(10);
         webForm.populatequestion3();
     }
 
@@ -131,8 +120,14 @@ public class TestPlan {
     public static void populatequestion4() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(10);
         webForm.populatequestion4();
+    }
+
+    @Test(testName ="Question5")
+    public static void populatequestion5() {
+        driver.get(Utils.BASE_URL);
+        MainPage webForm = new MainPage(driver);
+        webForm.populatequestion5();
     }
 
  @AfterSuite

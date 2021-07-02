@@ -1,7 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.Test;
 
 public class ContactInfo extends PageObject{
 
@@ -14,11 +13,11 @@ public class ContactInfo extends PageObject{
     @FindBy(xpath = "//*[@id=\"email\"]")
     private WebElement emailform;
     @FindBy(xpath = "//*[@id=\"phone\"]")
-    private WebElement phone ;
+    private WebElement phone;
     @FindBy(xpath = "//*[@id=\"country\"]")
     private WebElement country;
     @FindBy(xpath = "//*[@id=\"city\"]")
-    private WebElement city ;
+    private WebElement city;
     @FindBy(xpath = "//*[@id=\"postCode\"]")
     private WebElement postalcode;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
@@ -42,26 +41,24 @@ public class ContactInfo extends PageObject{
 
     public void navigateToCourseOptions(){
 
-            driver.get(Utils.BASE_URL2_ContactInfo);
-            ContactInfo webFormTwo = new ContactInfo(driver);
-            webFormTwo.populateEmailForm();
-            Utils.waitForElementToLoad(10);
+            populateEmailForm();
+            Utils.waitForElementToLoad(2);
 
 
-            webFormTwo.populatePhone();
-            Utils.waitForElementToLoad(10);
+            populatePhone();
+            Utils.waitForElementToLoad(2);
 
-            webFormTwo.populateCountry();
-            Utils.waitForElementToLoad(10);
+            populateCountry();
+            Utils.waitForElementToLoad(2);
 
-            webFormTwo.populateCity();
-            Utils.waitForElementToLoad(10);
+            populateCity();
+            Utils.waitForElementToLoad(2);
 
-            webFormTwo.populatePostalCode();
-            Utils.waitForElementToLoad(10);
+            populatePostalCode();
+            Utils.waitForElementToLoad(2);
 
-            webFormTwo.populateNextButton1();
-            Utils.waitForElementToLoad(10);
+            populateNextButton1();
+            Utils.waitForElementToLoad(2);
     }
 
 }

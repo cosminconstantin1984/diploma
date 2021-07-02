@@ -42,25 +42,18 @@ public class PaymentInfo extends PageObject{
     public void populateHomePage(){this.homepage.click();}
 
     public void FinalPaymentInfo(){
-        driver.get(Utils.BASE_URL4_PaymentInfo);
-        PaymentInfo webFormFour = new PaymentInfo(driver);
-        webFormFour.populateCardHolder();
-        Utils.waitForElementToLoad(10);
+       populateCardHolder();
 
-        webFormFour.populateCardNumber();
-        Utils.waitForElementToLoad(10);
+       populateCardNumber();
 
-        webFormFour.populateCiv();
-        Utils.waitForElementToLoad(10);
+       populateCiv();
 
-        webFormFour.populateMonth();
-        Utils.waitForElementToLoad(10);
+       populateMonth();
 
-        webFormFour.populateYear();
-        Utils.waitForElementToLoad(10);
+       populateYear();
 
-        webFormFour.populateNextButton3();
-        Utils.waitForElementToLoad(10);
+       populateNextButton3();
+       Utils.waitForElementToLoad(3);
     }
 }
 

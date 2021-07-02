@@ -1,7 +1,7 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.Test;
+
 
 public class PersonalInformation extends PageObject {
 
@@ -11,8 +11,7 @@ public class PersonalInformation extends PageObject {
     private final String Password="IonascuCosmin";
     private final String ConfirmPassword="IonascuCosmin";
 
-    /*@FindBy(xpath = "/html/body/section[1]/div/div/div/button")
-    private WebElement Enrolment;*/
+
     @FindBy(xpath = "//*[@id=\"firstName\"]")
     private WebElement firstname;
     @FindBy(xpath = "//*[@id=\"lastName\"]")
@@ -46,27 +45,19 @@ public class PersonalInformation extends PageObject {
 
     public void navigateToContactInfoPage() {
 
-            driver.get(Utils.BASE_URL_PersonalInfo);
-            PersonalInformation webForm = new PersonalInformation(driver);
-            webForm.populateFirstName();
-            Utils.waitForElementToLoad(10);
 
-            webForm.populateLastName();
-            Utils.waitForElementToLoad(10);
+            populateFirstName();
 
+            populateLastName();
 
-            webForm.populateUserName();
-            Utils.waitForElementToLoad(10);
+            populateUserName();
 
+            populatePassword();
 
-            webForm.populatePassword();
-            Utils.waitForElementToLoad(10);
+            populateConfirmPassword();
 
-            webForm.populateConfirmPassword();
-            Utils.waitForElementToLoad(10);
+            populateNextButton();
 
-            webForm.populateNextButton();
-            Utils.waitForElementToLoad(10);
 
     }
 }

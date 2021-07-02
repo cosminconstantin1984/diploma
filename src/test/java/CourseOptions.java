@@ -25,13 +25,10 @@ public class CourseOptions extends PageObject {
 
     public void navigateToPaymentInfo() {
 
-        driver.get(Utils.BASE_URL3_CourseOptions);
-        CourseOptions webFormThree = new CourseOptions(driver);
-        webFormThree.populateManualTester();
-        Utils.waitForElementToLoad(10);
+        populateManualTester();
+        Utils.waitForElementToLoad(5);
 
-
-        webFormThree.populateNextButton2();
-        Utils.waitForElementToLoad(10);
+        populateNextButton2();
+        Utils.waitForElementToLoad(5);
     }
 }
