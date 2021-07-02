@@ -86,48 +86,48 @@ public class TestPlan {
         Utils.waitForElementToLoad(3);
     }
 
-    @Test(testName ="Fundamentals")
-    public static void populateReadmorefundamental () {
+    @Test(testName ="sectionFundamentals")
+    public static void populateSectionfundamental () {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populateReadmorefundamental();
+        webForm.populateSectionfundamental();
     }
 
-    @Test(testName ="Question1")
-    public static void populatequestion1() {
+    @Test(testName ="QuestionOne")
+    public static void populatequestionOne() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populatequestion1();
+        webForm.populatequestionOne();
         Utils.waitForElementToLoad(5);
 
     }
 
-    @Test(testName ="Question2")
-    public static void populatequestion2() {
+    @Test(testName ="QuestionTwo")
+    public static void populatequestionTwo() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populatequestion2();
+        webForm.populatequestionTwo();
     }
 
-    @Test(testName ="Question3")
-    public static void populatequestion3() {
+    @Test(testName ="QuestionThree")
+    public static void populatequestionThree() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populatequestion3();
+        webForm.populatequestionThree();
     }
 
-    @Test(testName ="Question4")
-    public static void populatequestion4() {
+    @Test(testName ="QuestionFour")
+    public static void populatequestionFour() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populatequestion4();
+        webForm.populatequestionFour();
     }
 
-    @Test(testName ="Question5")
-    public static void populatequestion5() {
+    @Test(testName ="QuestionFive")
+    public static void populatequestionFive() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populatequestion5();
+        webForm.populatequestionFive();
     }
 
  @AfterSuite

@@ -32,15 +32,15 @@ public class MainPage extends PageObject {
     @FindBy(xpath = "//*[@id=\"questions\"]")
     private WebElement bodyQuestion;
     @FindBy(xpath = "//*[@id=\"questions\"]/div[1]/h3/button")
-    private WebElement question1;
+    private WebElement questionOne;
     @FindBy(xpath = "//*[@id=\"questions\"]/div[2]/h3/button")
-    private WebElement question2;
+    private WebElement questionTwo;
     @FindBy(xpath = "//*[@id=\"questions\"]/div[3]/h3/button")
-    private WebElement question3;
+    private WebElement questionThree;
     @FindBy(xpath = "//*[@id=\"questions\"]/div[4]/h3/button")
-    private WebElement question4;
+    private WebElement questionFour;
     @FindBy(xpath = "//*[@id=\"questions\"]/div[5]/h3/button")
-    private WebElement question5;
+    private WebElement questionFive;
 
 
     public MainPage(WebDriver driver) {
@@ -65,28 +65,28 @@ public class MainPage extends PageObject {
         Utils.scrollToElement(driver, inperson);
         this.Readmoreblack2.click();}
 
-    public void populateReadmorefundamental(){
+    public void populateSectionfundamental(){
         this.readMore.click();
     }
 
-    public void populatequestion1(){
+    public void populatequestionOne(){
         Utils.scrollToElement(driver, bodyQuestion);
-        this.question1.click();}
+        this.questionOne.click();}
 
-    public void populatequestion2(){
+    public void populatequestionTwo(){
         Utils.scrollToElement(driver, bodyQuestion);
-        this.question2.click();}
+        this.questionTwo.click();}
 
-    public void populatequestion3(){
+    public void populatequestionThree(){
         Utils.scrollToElement(driver, bodyQuestion);
-        this.question3.click();}
+        this.questionThree.click();}
 
-    public void populatequestion4(){
+    public void populatequestionFour(){
         Utils.scrollToElement(driver, bodyQuestion);
-        this.question4.click();}
+        this.questionFour.click();}
 
-    public void populatequestion5(){
+    public void populatequestionFive(){
         Utils.scrollToElement(driver, bodyQuestion);
-        this.question5.click();}
+        this.questionFive.click();}
 
 }
