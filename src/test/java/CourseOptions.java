@@ -7,7 +7,7 @@ public class CourseOptions extends PageObject {
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/div[1]/label")
     private WebElement manualtester;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/button[2]")
-    private WebElement nextbutton2;
+    private WebElement nextButtonsection;
 
 
     public CourseOptions(WebDriver driver) {
@@ -18,17 +18,17 @@ public class CourseOptions extends PageObject {
         this.manualtester.click();
     }
 
-    public void populateNextButton2() {
-        this.nextbutton2.click();
+    public void populateNextButtonSection() {
+        this.nextButtonsection.click();
     }
 
 
     public void navigateToPaymentInfo() {
 
         populateManualTester();
-        Utils.waitForElementToLoad(5);
+        Utils.waitForElementToLoad(2);
 
-        populateNextButton2();
-        Utils.waitForElementToLoad(5);
+        populateNextButtonSection();
+        Utils.waitForElementToLoad(2);
     }
 }

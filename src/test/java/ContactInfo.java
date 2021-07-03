@@ -4,11 +4,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class ContactInfo extends PageObject{
 
-    private final String EmailForm="cosminel.com";
-    private final String Phone="0766472524";
-    private final String Country="Romania";
-    private final String City="Brasov";
-    private final String PostalCode="300312";
+    private final String EMAILFORM="cosminel_ctin@yahoo.com";
+    private final String PHONE="0766472524";
+    private final String COUNTRY="Romania";
+    private final String CITY="Brasov";
+    private final String POSTALCODE="300312";
 
     @FindBy(xpath = "//*[@id=\"email\"]")
     private WebElement emailform;
@@ -21,29 +21,28 @@ public class ContactInfo extends PageObject{
     @FindBy(xpath = "//*[@id=\"postCode\"]")
     private WebElement postalcode;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
-    private WebElement nextbutton1;
+    private WebElement nextButtonsection;
 
     public ContactInfo (WebDriver driver) {
         super(driver);
     }
 
-    public void populateEmailForm() {this.emailform.sendKeys(EmailForm);}
+    public void populateEmailForm() {this.emailform.sendKeys(EMAILFORM);}
 
-    public void populatePhone() {this.phone.sendKeys(Phone);}
+    public void populatePhone() {this.phone.sendKeys(PHONE);}
 
-    public void populateCountry() {this.country.sendKeys(Country);}
+    public void populateCountry() {this.country.sendKeys(COUNTRY);}
 
-    public void populateCity() {this.city.sendKeys(City);}
+    public void populateCity() {this.city.sendKeys(CITY);}
 
-    public void populatePostalCode() {this.postalcode.sendKeys(PostalCode);}
+    public void populatePostalCode() {this.postalcode.sendKeys(POSTALCODE);}
 
-    public void populateNextButton1(){this.nextbutton1.click();}
+    public void populateNextButtonSection(){this.nextButtonsection.click();}
 
     public void navigateToCourseOptions(){
 
             populateEmailForm();
             Utils.waitForElementToLoad(2);
-
 
             populatePhone();
             Utils.waitForElementToLoad(2);
@@ -57,7 +56,7 @@ public class ContactInfo extends PageObject{
             populatePostalCode();
             Utils.waitForElementToLoad(2);
 
-            populateNextButton1();
+            populateNextButtonSection();
             Utils.waitForElementToLoad(2);
     }
 

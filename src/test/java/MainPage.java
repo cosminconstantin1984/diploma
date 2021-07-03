@@ -5,21 +5,21 @@ import org.openqa.selenium.support.FindBy;
 public class MainPage extends PageObject {
 
 
-    private final String EMAIL1 ="cosminel_ctin@yahoo.com";
-    private final String Wrong= "zxcdt";
+    private final String emailEMAIL ="cosminel_ctin@yahoo.com";
+    private final String wrongEmail= "zxcdt";
 
     @FindBy(xpath = "/html/body/section[1]/div/div/div/button")
     private WebElement Enrolment;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[1]/div/div/a")
-    private WebElement Readmoreblack1 ;
+    private WebElement readmoreBlackbutton ;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[2]/div/div/a")
-    private WebElement Readmoregray;
+    private WebElement readmoreGraybutton;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[3]/div/div/a")
-    private WebElement Readmoreblack2;
+    private WebElement readmoreBlacksecondbutton;
     @FindBy(xpath = "/html/body/section[2]/div/div/div/input")
-    private WebElement email1;
+    private WebElement email;
     @FindBy(xpath = "/html/body/section[2]/div/div/div/input")
-    private WebElement wrong;
+    private WebElement wrongEmailsection;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[1]/div/div/h3")
     private WebElement virtual;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[2]/div/div/h3")
@@ -28,7 +28,6 @@ public class MainPage extends PageObject {
     private WebElement inperson;
     @FindBy(xpath = "/html/body")
     private WebElement readMore;
-
     @FindBy(xpath = "//*[@id=\"questions\"]")
     private WebElement bodyQuestion;
     @FindBy(xpath = "//*[@id=\"questions\"]/div[1]/h3/button")
@@ -49,43 +48,43 @@ public class MainPage extends PageObject {
 
     public void populateEnrolment(){this.Enrolment.click();}
 
-    public void populateSiteSearch() {this.email1.sendKeys(EMAIL1);}
+    public void populateSiteSearch() {this.email.sendKeys(emailEMAIL);}
 
-    public void populateSiteSearch1() {this.wrong.sendKeys(Wrong);}
+    public void populateSiteSearch1() {this.wrongEmailsection.sendKeys(wrongEmail);}
 
-    public void populateReadmoreblack1(){
+    public void populatereadmoreBlackbutton(){
         Utils.scrollToElement(driver, virtual);
-        this.Readmoreblack1.click();}
+        this.readmoreBlackbutton.click();}
 
-    public void populateReadmoregray(){
+    public void populatereadmoreGraybutton(){
         Utils.scrollToElement(driver, hybrid);
-        this.Readmoregray.click();}
+        this.readmoreGraybutton.click();}
 
-    public void populateReadmoreblack2(){
+    public void populatereadmoreBlacksecondbutton(){
         Utils.scrollToElement(driver, inperson);
-        this.Readmoreblack2.click();}
+        this.readmoreBlacksecondbutton.click();}
 
     public void populateSectionfundamental(){
         this.readMore.click();
     }
 
-    public void populatequestionOne(){
+    public void clickonquestionOne(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionOne.click();}
 
-    public void populatequestionTwo(){
+    public void clickonquestionTwo(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionTwo.click();}
 
-    public void populatequestionThree(){
+    public void clickonquestionThree(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionThree.click();}
 
-    public void populatequestionFour(){
+    public void clickonquestionFour(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionFour.click();}
 
-    public void populatequestionFive(){
+    public void clickonquestionFive(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionFive.click();}
 
