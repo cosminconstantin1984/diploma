@@ -1,6 +1,7 @@
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -14,11 +15,11 @@ public class TestPlan {
     }
 
     @Test(testName = "Enrolment")
-    public static void populateEnrolment() {
+    public static void clickEnrolment() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populateEnrolment();
-        Utils.waitForElementToLoad(10);
+        webForm.clickEnrolment();
+        Utils.waitForElementToLoad(5);
     }
 
     @Test(testName = "Navigate to Info Pages")
@@ -29,72 +30,75 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
 
         ContactInfo webFormTwo = new ContactInfo(driver);
+        Assert.assertEquals(webFormTwo.getContactInformationHeader(), "Contact information");
         webFormTwo.navigateToCourseOptions();
         Utils.waitForElementToLoad(2);
 
         CourseOptions webFormThree = new CourseOptions(driver);
+        Assert.assertEquals(webFormThree.getCourseOptions(), "Course options");
         webFormThree.navigateToPaymentInfo();
         Utils.waitForElementToLoad(2);
 
         PaymentInfo webFormFour = new PaymentInfo(driver);
+        Assert.assertEquals(webFormFour.getPaymentInfo(), "Payment information");
         webFormFour.FinalPaymentInfo();
         Utils.waitForElementToLoad(2);
-
 }
 
-    @Test(testName ="readmoreBlackbuttonsection")
-    public static void populatereadmoreBlackbutton () {
+    @Test(testName ="ReadmoreBlackbuttonsection")
+    public static void clickReadmoreBlackbutton() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populatereadmoreBlackbutton();
+        webForm.clickReadmoreBlackButton();
+        Utils.waitForElementToLoad(2);
+        Assert.assertEquals(webForm.getVirtual(), "Virtual");
+        Utils.waitForElementToLoad(2);
     }
 
-    @Test(testName ="readmoreGraybuttonsection")
-    public static void populatereadmoreGraybutton() {
+    @Test(testName ="ReadmoreGraybuttonsection")
+    public static void clickReadmoreGraybutton() {
+        driver.get(Utils.BASE_URL);
+        MainPage webForm = new MainPage(driver);
+        webForm.clickReadmoreGrayButton();
+        Utils.waitForElementToLoad(2);
+        Assert.assertEquals(webForm.getHybrid(), "Hybrid");
+        Utils.waitForElementToLoad(2);
+    }
+
+    @Test(testName ="ReadmoreBlacksecondbuttonsection")
+    public static void clickReadmoreBlacksecondbutton() {
+        driver.get(Utils.BASE_URL);
+        MainPage webForm = new MainPage(driver);
+        webForm.clickReadmoreBlackSecondButton();
+        Utils.waitForElementToLoad(2);
+        Assert.assertEquals(webForm.getInPerson(), "In Person");
+        Utils.waitForElementToLoad(2);
+    }
+
+    @Test(testName ="EmailAdressSearch")
+    public static void SiteSearch() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
         Utils.waitForElementToLoad(2);
-        webForm.populatereadmoreGraybutton();
-    }
-
-    @Test(testName ="readmoreBlacksecondbuttonsection")
-    public static void populatereadmoreBlacksecondbutton() {
-        driver.get(Utils.BASE_URL);
-        MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(2);
-        webForm.populatereadmoreBlacksecondbutton();
-    }
-
-    @Test(testName ="Emailadresssearch")
-    public static void populateSiteSearch() {
-        driver.get(Utils.BASE_URL);
-        MainPage webForm = new MainPage(driver);
-        Utils.waitForElementToLoad(2);
-        webForm.populateSiteSearch();
+        webForm.SiteSearch();
         Utils.waitForElementToLoad(3);
     }
 
     @Test(testName ="WrongEmailadress")
-    public static void populateSiteSearch1() {
+    public static void SiteSearchWrong() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
         Utils.waitForElementToLoad(2);
-        webForm.populateSiteSearch1();
+        webForm.SiteSearchWrong();
         Utils.waitForElementToLoad(3);
-    }
-
-    @Test(testName ="sectionFundamentals")
-    public static void populateSectionfundamental () {
-        driver.get(Utils.BASE_URL);
-        MainPage webForm = new MainPage(driver);
-        webForm.populateSectionfundamental();
     }
 
     @Test(testName ="QuestionOne")
     public static void clickonquestionOne() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.clickonquestionOne();
+        Utils.waitForElementToLoad(2);
+        webForm.clickOnQuestionOne();
         Utils.waitForElementToLoad(5);
 
     }
@@ -103,7 +107,8 @@ public class TestPlan {
     public static void clickonquestionTwo() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.clickonquestionTwo();
+        Utils.waitForElementToLoad(2);
+        webForm.clickOnQuestionTwo();
         Utils.waitForElementToLoad(5);
     }
 
@@ -111,7 +116,7 @@ public class TestPlan {
     public static void clickonquestionThree() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.clickonquestionThree();
+        webForm.clickOnQuestionThree();
         Utils.waitForElementToLoad(5);
     }
 
@@ -119,7 +124,8 @@ public class TestPlan {
     public static void clickonquestionFour() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.clickonquestionFour();
+        Utils.waitForElementToLoad(2);
+        webForm.clickOnQuestionFour();
         Utils.waitForElementToLoad(5);
     }
 
@@ -127,13 +133,15 @@ public class TestPlan {
     public static void clickonquestionFive() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.clickonquestionFive();
+        Utils.waitForElementToLoad(2);
+        webForm.clickOnQuestionFive();
         Utils.waitForElementToLoad(5);
     }
 
  @AfterSuite
     public static void cleanUp() {
         driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
         driver.close();
     }
 }

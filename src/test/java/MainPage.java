@@ -12,10 +12,16 @@ public class MainPage extends PageObject {
     private WebElement Enrolment;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[1]/div/div/a")
     private WebElement readmoreBlackbutton ;
+    @FindBy(xpath = "/html/body/h1")
+    private WebElement containVirtual;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[2]/div/div/a")
     private WebElement readmoreGraybutton;
+    @FindBy(xpath = "/html/body/h1")
+    private WebElement containHybrid;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[3]/div/div/a")
     private WebElement readmoreBlacksecondbutton;
+    @FindBy(xpath = "/html/body/h1")
+    private WebElement containInPerson;
     @FindBy(xpath = "/html/body/section[2]/div/div/div/input")
     private WebElement email;
     @FindBy(xpath = "/html/body/section[2]/div/div/div/input")
@@ -26,8 +32,6 @@ public class MainPage extends PageObject {
     private WebElement hybrid;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[3]/div/div/h3")
     private WebElement inperson;
-    @FindBy(xpath = "/html/body")
-    private WebElement readMore;
     @FindBy(xpath = "//*[@id=\"questions\"]")
     private WebElement bodyQuestion;
     @FindBy(xpath = "//*[@id=\"questions\"]/div[1]/h3/button")
@@ -46,45 +50,53 @@ public class MainPage extends PageObject {
         super(driver);
     }
 
-    public void populateEnrolment(){this.Enrolment.click();}
+    public void clickEnrolment(){this.Enrolment.click();}
 
-    public void populateSiteSearch() {this.email.sendKeys(emailEMAIL);}
+    public void SiteSearch() {this.email.sendKeys(emailEMAIL);}
 
-    public void populateSiteSearch1() {this.wrongEmailsection.sendKeys(wrongEmail);}
+    public void SiteSearchWrong() {this.wrongEmailsection.sendKeys(wrongEmail);}
 
-    public void populatereadmoreBlackbutton(){
+    public void clickReadmoreBlackButton(){
         Utils.scrollToElement(driver, virtual);
         this.readmoreBlackbutton.click();}
 
-    public void populatereadmoreGraybutton(){
+    public String getVirtual() {
+        return this.containVirtual.getText();
+    }
+
+    public void clickReadmoreGrayButton(){
         Utils.scrollToElement(driver, hybrid);
         this.readmoreGraybutton.click();}
 
-    public void populatereadmoreBlacksecondbutton(){
+    public String getHybrid() {
+        return this.containHybrid.getText();
+    }
+
+    public void clickReadmoreBlackSecondButton(){
         Utils.scrollToElement(driver, inperson);
         this.readmoreBlacksecondbutton.click();}
 
-    public void populateSectionfundamental(){
-        this.readMore.click();
+    public String getInPerson() {
+        return this.containInPerson.getText();
     }
 
-    public void clickonquestionOne(){
+    public void clickOnQuestionOne(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionOne.click();}
 
-    public void clickonquestionTwo(){
+    public void clickOnQuestionTwo(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionTwo.click();}
 
-    public void clickonquestionThree(){
+    public void clickOnQuestionThree(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionThree.click();}
 
-    public void clickonquestionFour(){
+    public void clickOnQuestionFour(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionFour.click();}
 
-    public void clickonquestionFive(){
+    public void clickOnQuestionFive(){
         Utils.scrollToElement(driver, bodyQuestion);
         this.questionFive.click();}
 

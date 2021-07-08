@@ -22,6 +22,9 @@ public class ContactInfo extends PageObject{
     private WebElement postalcode;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
     private WebElement nextButtonsection;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/h3")
+    private WebElement containInformationHeader;
+
 
     public ContactInfo (WebDriver driver) {
         super(driver);
@@ -38,6 +41,10 @@ public class ContactInfo extends PageObject{
     public void populatePostalCode() {this.postalcode.sendKeys(POSTALCODE);}
 
     public void populateNextButtonSection(){this.nextButtonsection.click();}
+
+    public String getContactInformationHeader() {
+        return this.containInformationHeader.getText();
+    }
 
     public void navigateToCourseOptions(){
 

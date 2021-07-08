@@ -22,6 +22,8 @@ public class PaymentInfo extends PageObject{
     private WebElement nextButtonsection;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[5]/a")
     private WebElement homepage;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[4]/h3")
+    private WebElement containPaymentInfo;
 
     public PaymentInfo (WebDriver driver) {
         super(driver);
@@ -40,6 +42,10 @@ public class PaymentInfo extends PageObject{
     public void populateNextButtonSection(){this.nextButtonsection.click();}
 
     public void populateHomePage(){this.homepage.click();}
+
+    public String getPaymentInfo() {
+        return this.containPaymentInfo.getText();
+    }
 
     public void FinalPaymentInfo(){
 

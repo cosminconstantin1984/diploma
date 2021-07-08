@@ -8,7 +8,8 @@ public class CourseOptions extends PageObject {
     private WebElement manualtester;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/button[2]")
     private WebElement nextButtonsection;
-
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/h3")
+    private WebElement containCourseOptions;
 
     public CourseOptions(WebDriver driver) {
         super(driver);
@@ -22,6 +23,9 @@ public class CourseOptions extends PageObject {
         this.nextButtonsection.click();
     }
 
+    public String getCourseOptions() {
+        return this.containCourseOptions.getText();
+    }
 
     public void navigateToPaymentInfo() {
 
