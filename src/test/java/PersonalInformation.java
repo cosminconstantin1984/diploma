@@ -23,6 +23,11 @@ public class PersonalInformation extends PageObject {
     private WebElement confirmpassword;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
     private WebElement nextButtonsection;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/h3")
+    private WebElement containInformationHeader;
+    public String getpersonalinformationheader() {
+        return this.containInformationHeader.getText();
+    }
 
 
     public PersonalInformation (WebDriver driver) {
@@ -39,7 +44,7 @@ public class PersonalInformation extends PageObject {
 
     public void populateConfirmPassword() {this.confirmpassword.sendKeys(confirmPASSWORD);}
 
-    public void populateNextButton(){this.nextButtonsection.click();}
+    public void clickNextButton(){this.nextButtonsection.click();}
 
     public void navigateToContactInfoPage() {
 
@@ -58,7 +63,19 @@ public class PersonalInformation extends PageObject {
         populateConfirmPassword();
         Utils.waitForElementToLoad(2);
 
-        populateNextButton();
+        clickNextButton();
+        Utils.waitForElementToLoad(2);
+
+    }
+    public void InfoPage() {
+
+        populateFirstName();
+        Utils.waitForElementToLoad(2);
+
+        populateLastName();
+        Utils.waitForElementToLoad(2);
+
+        clickNextButton();
         Utils.waitForElementToLoad(2);
 
     }

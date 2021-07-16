@@ -45,6 +45,28 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
 }
 
+    @Test(testName = "Negative test on Navigate to Info Pages")
+    public static void clickInfoPage() {
+        driver.get(Utils.BASE_URL2_ContactInfo);
+        PersonalInformation webForm = new PersonalInformation(driver);
+        Assert.assertEquals(webForm.getpersonalinformationheader(), "Personal information");
+        webForm.InfoPage();
+        Utils.waitForElementToLoad(2);
+    }
+
+    @Test(testName = "Negative test on Navigate to Contact Info")
+    public static void StopNavigateToCourseOptions() {
+        driver.get(Utils.BASE_URL2_ContactInfo);
+        PersonalInformation webForm = new PersonalInformation(driver);
+        webForm.navigateToContactInfoPage();
+        Utils.waitForElementToLoad(2);
+        ContactInfo webFormTwo = new ContactInfo(driver);
+        Assert.assertEquals(webFormTwo.getContactInformationHeader(), "Contact information");
+        webFormTwo.StopNavigateToCourseOptions();
+        Utils.waitForElementToLoad(2);
+
+    }
+
     @Test(testName ="ReadmoreBlackbuttonsection")
     public static void clickReadmoreBlackbutton() {
         driver.get(Utils.BASE_URL);
@@ -53,6 +75,19 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
         Assert.assertEquals(webForm.getVirtual(), "Virtual");
         Utils.waitForElementToLoad(2);
+    }
+
+    @Test(testName ="Readmore Blackbutton section back")
+    public static void clickReadmoreBlackbuttonback() {
+        driver.get(Utils.BASE_URL);
+        MainPage webForm = new MainPage(driver);
+        webForm.clickReadmoreBlackButton();
+        Utils.waitForElementToLoad(2);
+        Assert.assertEquals(webForm.getVirtual(), "Virtual");
+        Utils.waitForElementToLoad(2);
+        webForm.clickReadmoreBlackButtonback();
+        Utils.waitForElementToLoad(2);
+
     }
 
     @Test(testName ="ReadmoreGraybuttonsection")
@@ -65,6 +100,18 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
     }
 
+    @Test(testName ="Readmore Gray button section back")
+    public static void clickReadmoreGraybuttonback() {
+        driver.get(Utils.BASE_URL);
+        MainPage webForm = new MainPage(driver);
+        webForm.clickReadmoreGrayButton();
+        Utils.waitForElementToLoad(2);
+        Assert.assertEquals(webForm.getHybrid(), "Hybrid");
+        Utils.waitForElementToLoad(2);
+        webForm.ReadmoreGrayButtonback();
+        Utils.waitForElementToLoad(2);
+    }
+
     @Test(testName ="ReadmoreBlacksecondbuttonsection")
     public static void clickReadmoreBlacksecondbutton() {
         driver.get(Utils.BASE_URL);
@@ -73,6 +120,19 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
         Assert.assertEquals(webForm.getInPerson(), "In Person");
         Utils.waitForElementToLoad(2);
+    }
+
+    @Test(testName ="Readmore Black secondbuttonsection back")
+    public static void ReadmoreBlacksecondbuttonback() {
+        driver.get(Utils.BASE_URL);
+        MainPage webForm = new MainPage(driver);
+        webForm.clickReadmoreBlackSecondButton();
+        Utils.waitForElementToLoad(2);
+        Assert.assertEquals(webForm.getInPerson(), "In Person");
+        Utils.waitForElementToLoad(2);
+        webForm.ReadmoreBlacksecondbuttonback();
+        Utils.waitForElementToLoad(2);
+
     }
 
     @Test(testName ="EmailAdressSearch")
@@ -94,7 +154,7 @@ public class TestPlan {
     }
 
     @Test(testName ="QuestionOne")
-    public static void clickonquestionOne() {
+    public static void clickOnQuestionOne() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
         Utils.waitForElementToLoad(2);
@@ -104,7 +164,7 @@ public class TestPlan {
     }
 
     @Test(testName ="QuestionTwo")
-    public static void clickonquestionTwo() {
+    public static void clickOnQuestionTwo() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
         Utils.waitForElementToLoad(2);
@@ -113,7 +173,7 @@ public class TestPlan {
     }
 
     @Test(testName ="QuestionThree")
-    public static void clickonquestionThree() {
+    public static void clickOnQuestionThree() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
         webForm.clickOnQuestionThree();
@@ -121,7 +181,7 @@ public class TestPlan {
     }
 
     @Test(testName ="QuestionFour")
-    public static void clickonquestionFour() {
+    public static void clickOnQuestionFour() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
         Utils.waitForElementToLoad(2);
@@ -130,7 +190,7 @@ public class TestPlan {
     }
 
     @Test(testName ="QuestionFive")
-    public static void clickonquestionFive() {
+    public static void clickOnQuestionFive() {
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
         Utils.waitForElementToLoad(2);

@@ -28,10 +28,16 @@ public class MainPage extends PageObject {
     private WebElement wrongEmailsection;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[1]/div/div/h3")
     private WebElement virtual;
+    @FindBy(xpath = "/html/body/a")
+    private WebElement backvirtual;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[2]/div/div/h3")
     private WebElement hybrid;
+    @FindBy(xpath = "/html/body/a")
+    private WebElement backhybrid;
     @FindBy(xpath = "/html/body/section[3]/div/div/div[3]/div/div/h3")
     private WebElement inperson;
+    @FindBy(xpath = "/html/body/a")
+    private WebElement backinperson;
     @FindBy(xpath = "//*[@id=\"questions\"]")
     private WebElement bodyQuestion;
     @FindBy(xpath = "//*[@id=\"questions\"]/div[1]/h3/button")
@@ -60,6 +66,10 @@ public class MainPage extends PageObject {
         Utils.scrollToElement(driver, virtual);
         this.readmoreBlackbutton.click();}
 
+    public void clickReadmoreBlackButtonback(){
+        this.backvirtual.click();
+    }
+
     public String getVirtual() {
         return this.containVirtual.getText();
     }
@@ -68,6 +78,10 @@ public class MainPage extends PageObject {
         Utils.scrollToElement(driver, hybrid);
         this.readmoreGraybutton.click();}
 
+    public void ReadmoreGrayButtonback(){
+        this.backhybrid.click();
+    }
+
     public String getHybrid() {
         return this.containHybrid.getText();
     }
@@ -75,6 +89,10 @@ public class MainPage extends PageObject {
     public void clickReadmoreBlackSecondButton(){
         Utils.scrollToElement(driver, inperson);
         this.readmoreBlacksecondbutton.click();}
+
+    public void ReadmoreBlacksecondbuttonback(){
+        this.backinperson.click();
+    }
 
     public String getInPerson() {
         return this.containInPerson.getText();

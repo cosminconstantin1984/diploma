@@ -4,7 +4,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ContactInfo extends PageObject{
 
-    private final String EMAILFORM="cosminel_ctin@yahoo.com";
+    private final String EMAILS ="cosminel_ctin@yahoo.com";
     private final String PHONE="0766472524";
     private final String COUNTRY="Romania";
     private final String CITY="Brasov";
@@ -30,7 +30,7 @@ public class ContactInfo extends PageObject{
         super(driver);
     }
 
-    public void populateEmailForm() {this.emailform.sendKeys(EMAILFORM);}
+    public void populateEmailForm() {this.emailform.sendKeys(EMAILS);}
 
     public void populatePhone() {this.phone.sendKeys(PHONE);}
 
@@ -65,6 +65,17 @@ public class ContactInfo extends PageObject{
 
             populateNextButtonSection();
             Utils.waitForElementToLoad(2);
+    }
+    public void StopNavigateToCourseOptions(){
+
+        populateEmailForm();
+        Utils.waitForElementToLoad(2);
+
+        populatePhone();
+        Utils.waitForElementToLoad(2);
+
+        populateNextButtonSection();
+        Utils.waitForElementToLoad(2);
     }
 
 }
